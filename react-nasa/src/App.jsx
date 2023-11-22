@@ -14,10 +14,6 @@ import Nav from './components/Nav';
 
 function App() {
 
-  // useEffect(()=>{
-  //  nasasearch();
-  // console.log({formData.searchterm})
-  // },[]);
   return (
     <div className='App'>
       <Nav />
