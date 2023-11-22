@@ -5,7 +5,7 @@ function Nasalist() {
     const [search, setSearch] = useState(null);
 
     const getSearch = async (searchterm) => {
-    const url = `https://images-api.nasa.gov/search?q=${searchterm}}`;
+    const url = `https://images-api.nasa.gov/search?q=${searchterm}`;
     
     // make fetch request and store response
     try {
@@ -21,13 +21,14 @@ function Nasalist() {
   }
   useEffect(() => {
     getSearch();
-  }, [setSearch]);
+  }, []);
 
   return (
     <div>
       <center><h3>Type in the Search:  <Form nasaSearch={getSearch}/></h3></center>
-      <DisplayList search={search}/>
+      {search ? <DisplayList search={search}/> :"loading"}
         {/* <h1>This is the  Nasa list Page </h1> */}
+       
     </div>
   )
 }
